@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+            -->
+            <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+            <meta name="format-detection" content="telephone=no">
+            <meta name="msapplication-tap-highlight" content="no">
+            <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+            <meta name="color-scheme" content="light dark">
+            <link rel="stylesheet" href="css/index.css">
+            <link rel="stylesheet" href="assets/themes/waytec.min.css" />
+            <link rel="stylesheet" href="assets/themes/jquery.mobile.icons.min.css" />
+
+            <link rel="stylesheet" href="assets/libs-jquery-mobile/jquery.mobile-1.4.5.min.css">
+            <script src="assets/libs-jquery-mobile/demos/js/jquery.min.js"></script>
+            <script src="assets/libs-jquery-mobile/demos/js/jquery.mobile-1.4.5.min.js"></script> 
+            <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+
+        </head>
+        <body>
+            <!-- Página Inicial  -->
+            <div data-role="page" data-theme="d" id="pagina1">
+                <div data-role="header">
+                    <h1>Iniciaal</h1>
+                </div>
+                <div data-role="main" class="ui-content">
+                    <p>Parágrafo</p>
+                    <p> Está parte está em construção,
+                    <a href=#pagina2 data-transition="pop">Venha para cá</a> ( Como se essa para onde você vai fosse grande coisa ;) )
+                    </p>
+                </div>
+                <div data-role="footer">
+                    <h3>Rodapé</h3>
+                </div>
+
+            </div>
+            <!-- endinicial -->
+
+            <!-- page 1  -->
+            <div data-role="page" id="pagina2">
+                <div data-role="header"  class="cabeca">
+                    <h1>WayTec - Nome do artigo</h1>
+                    
+                    <form >
+
+                        <div class="ui-grid-a" style="display: flex;justify-content: center;align-items: right; border-radius: 3px;">
+                            <div class="ui-block-c">
+                                <div class="ui-bar ui-bar-a" style="height:60px; background: white">
+                                    <input type="search" name="password" id="search" value="" placeholder="Pesquise">
+                                </div>
+                            </div>
+                            <div class="ui-block-e">
+                                <div class="ui-bar ui-bar-a" style="height:60px; background: white">
+                                    <a class="ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all" type="submit"></a>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                    
+                </div>
+
+                <div data-role="main" class="ui-content">
+                    <div class="ilustracao">
+                        <img src="assets/img/cores.png">
+                    </div>
+                    <div class="ui-corner-all custom-corners">
+                          <div class="ui-bar ui-bar-c">
+                                <h3 align="center">Título</h3>
+                          </div>
+                          <div class="ui-body ui-body-a">
+                            <p>As cores sempre foram ferramentas para ilustrar os sentimentos e situações, a pré-história mostra indícios do uso das cores para representar da forma mais detalhada possível os eventos (com as técnicas disponíveis). Atualmente, a situação não muda, seja na arte ou na forma como falamos. Quem nunca ouviu um “Ele está vermelho de raiva” ou até mesmo “Você é um amarelo”. De qualquer forma, a cor está presente em todos os aspectos e consegue influenciar as pessoas tanto diretamente como indiretamente.
+                                <br>
+                                No marketing, as cores são fundamentais para criar influências e chamar atenção dos clientes. As marcas comerciais ao criarem uma propaganda ou desenvolver um produto têm a obrigação também de levar em conta a representação das cores e seus efeitos psicológicos que fazem nos consumidores. Não é normal você ver uma marca que venda Fast-Food ter a cor preta em sua logo ou que use muito nas suas propagandas, não é? Pode até ter o preto, obviamente, mas não será a principal tonalidade, as mais usadas são o amarelo e o vermelho, já que ambas podem despertar o apetite e serem cores mais quentes e chamativas. Outros significados para as cores em geral são:
+                                <br>
+                                - Roxo é a cor da sabedoria, espiritualidade e criatividade. O roxo transmite a sensação de melancolia e intuição.
+                                <br>
+                                - A cor laranja é utilizada para transmitir alegria, amizade, cumplicidade e confiança.
+                                <br>
+                                - O marrom representa a competência, maturidade e firmeza. Pode-se dizer que bastante confortável e familiar.
+                                <br>
+                                - O verde é tido como crescimento, saúde, responsabilidade e esperança. O verde escuro é pode ser associado ao dinheiro.
+                                <br>
+                                - O amarelo é passa a sensação de calor e luz, riqueza e clareza
+                                <br>
+                                - A cor vermelha representa ação, juventude, movimento, dinamicidade e urgência
+                                <br>
+                                - A cor azul é associada à tranqüilidade, confiança, segurança e inteligência. Os azuis mais claros têm a predominância da paz de espírito ou conhecimento. Os tons escuros têm mais a ver com a segurança e firmeza na escolha.
+                                <br>
+                                - A cor branca remete a pureza, calma e sinceridade. Significa equilíbrio e paz.
+                                <br>
+                                - Já a cor preta, apesar de possuir carga negativa por está associada com a morte. Também pode transmitir força, modernidade, sofisticação e simplicidade.
+                                <br>
+                                Vale ressaltar, que apesar das cores terem um grande papel nas tomadas de decisões. Aqueles pensam em utilizar elas no marketing devem tomar precauções, como utilizar uma determinada cor para um contexto, não utilizar muitas cores no produto, propaganda, sites em geral ou sua marca (torna-se confuso o carnaval de cores).
+                                <br>
+                                É possível concluir que com o contexto certo e uma cor que se encaixe no objetivo da sua marca, podem-se maximizar os resultados do seu produto ou serviço. Os pensamentos e ideias gerados a partir de uma tonalidade são uma boa ferramenta para vendedores.
+                                <br>
+                                E aí ficou até aqui? Tem alguma dúvida ou crítica? Deixe um comentário
+                                Até a próxima, Falou!!!
+                              </div>
+<!-- 
+                    <div align="center">
+                        <a href="{{ad.link}}" rel="nofollow"><img src="{{ad.image.url}}" border="0" width="250" height="250" /></a>
+                    </div> -->
+                </div>
+
+
+                <div data-role="controlgroup" data-type="vertical">
+                    <a href=#pagina3 class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all" data-transition="pop"></a>
+                </div>
+
+
+
+            </div>
+
+            
+
+            <div data-role="footer" class="pe">
+                <h2>@WayTec</h2>    
+                <div data-role="controlgroup" data-type="vertical">
+                    <!-- <a href="https://www.waytec.online" class="ui-btn"></a> -->
+
+                </div>
+            </div>
+        </div>
+        <!-- endpage 1 -->
+
+
+
+        <!-- page 2 -->
+        <div data-role="page" id="pagina3" data-theme="d" data-dialog="true">
+            <div data-role="header">
+                <h1>Essa é a segunda</h1>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <p>OPA! Bem-vindo</p>
+                <a href=#pagina1 class="ui-btn" data-transition="pop" data-direction="reverse">Volte para página inicial</a>
+            </div>
+
+            <div data-role="footer">
+                <h2>@WayTec</h2>
+            </div>
+
+        </div>
+        <!-- endpage 2 -->
+        
+
+
+        <script src="cordova.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+    </html>
