@@ -1,207 +1,878 @@
 <!DOCTYPE html>
+
 <!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
+	Licensed to the Apache Software Foundation (ASF) under one
+	or more contributor license agreements.  See the NOTICE file
+	distributed with this work for additional information
+	regarding copyright ownership.  The ASF licenses this file
+	to you under the Apache License, Version 2.0 (the
+	"License"); you may not use this file except in compliance
+	with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+	http://www.apache.org/licenses/LICENSE-2.0
 
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
+	Unless required by applicable law or agreed to in writing,
+	software distributed under the License is distributed on an
+	"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+	 KIND, either express or implied.  See the License for the
+	specific language governing permissions and limitations
+	under the License.
 -->
 <html>
 <head>
-    <meta charset="utf-8">
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-            -->
-            <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-            <meta name="format-detection" content="telephone=no">
-            <meta name="msapplication-tap-highlight" content="no">
-            <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-            <meta name="color-scheme" content="light dark">
-            <link rel="stylesheet" href="css/index.css">
-            <link rel="stylesheet" href="assets/themes/waytec.min.css" />
-            <link rel="stylesheet" href="assets/themes/jquery.mobile.icons.min.css" />
+	<meta charset="utf-8">
+		<!--
+		Customize this policy to fit your own app's needs. For more guidance, see:
+			https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+		Some notes:
+			* gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+			* https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+			* Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+				* Enable inline JS: add 'unsafe-inline' to default-src
+			-->
 
-            <link rel="stylesheet" href="assets/libs-jquery-mobile/jquery.mobile-1.4.5.min.css">
-            <script src="assets/libs-jquery-mobile/demos/js/jquery.min.js"></script>
-            <script src="assets/libs-jquery-mobile/demos/js/jquery.mobile-1.4.5.min.js"></script> 
-            <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+			<!-- quando tiver em lançamento -->
+			<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
+			
+			<!-- quando tiver em produção -->
+			<meta http-equiv="Content-Security-Policy" script-src='unsafe-inline';>
 
+			<meta name="format-detection" content="telephone=no">
+			<meta name="msapplication-tap-highlight" content="no">
+			<meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+			<meta name="color-scheme" content="light dark">
+			<link rel="stylesheet" href="css/index.css">
+			<link rel="stylesheet" href="assets/themes/waytec.min.css" />
+			<link rel="stylesheet" href="assets/themes/jquery.mobile.icons.min.css" />
 
-        </head>
-        <body>
-            <!-- Página Inicial  -->
-            <div data-role="page" data-theme="d" id="pagina1" class="my-page" data-url="demo-page">
-                    <div data-role="header">
-                            <h1>WayTec</h1>
-                    <form >
-
-                        <div class="ui-grid-a" style="display: flex;justify-content: center;align-items: right; border-radius: 3px;">
-                            <div class="ui-block-c">
-                                <div class="ui-bar ui-bar-a" style="height:60px; background: white">
-                                    <input type="search" name="password" id="search" value="" placeholder="Pesquise">
-                                </div>
-                            </div>
-                            <div class="ui-block-e">
-                                <div class="ui-bar ui-bar-a" style="height:60px; background: white">
-                                    <button class="ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all" type="submit"></button>
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </form>
-                            
-                    </div>
-                    
-                <div role="main" class="ui-content">
-                            <ul data-role="listview" data-inset="true">
-                                    <li><a href="#pagina2">
-                                            <img src="assets/img/cores.png" class="ui-li-thumb">
-                                            <h2>Cores no marketing</h2>
-                                            <p>As cores sempre foram ferramentas para ilustrar os sentimentos e situações, a pré-história mostra indícios do uso das cores para representar da forma mais detalhada possível...</p>
-                                            <p class="ui-li-aside">Veja mais</p>
-                                    </a></li>
-                                    
-                            </ul>
-                    </div>
-
-                <div data-role="footer" style="background: white" data-position="fixed">
-                    <div data-role="navbar">
-                        <ul>
-                            <a href=#pagina3 class="ui-btn ui-icon-grid ui-btn-icon-notext ui-corner-all" data-transition="pop"></a>
-                            <a href=#pagina3 class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all" data-transition="pop"></a>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-            <!-- endinicial -->
-
-            <!-- page 1  -->
-            <div data-role="page" data-theme="d" id="pagina2">
-                <div data-role="header">
-                    <h1>WayTec - Nome do artigo</h1>
-                    
-                    <a href=#pagina1 class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all" data-transition="pop"></a>
-                    <form >
-
-                        <div class="ui-grid-a" style="display: flex;justify-content: center;align-items: right; border-radius: 3px;">
-                            <div class="ui-block-c">
-                                <div class="ui-bar ui-bar-a" style="height:60px; background: white">
-                                    <input type="search" name="password" id="search" value="" placeholder="Pesquise">
-                                </div>
-                            </div>
-                            <div class="ui-block-e">
-                                <div class="ui-bar ui-bar-a" style="height:60px; background: white">
-                                    <button class="ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all" type="submit"></button>
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </form>
-                    <a href="https://waytec.online/artigo/cores-no-marketing" class="ui-btn ui-icon-info ui-btn-icon-notext ui-corner-all"></a>
-                    
-                </div>
-
-                <div data-role="main" class="ui-content">
-                    <div class="ilustracao">
-                        <img src="assets/img/cores.png">
-                    </div>
-                    <div class="ui-body ui-body-a ui-corner-all">
-                        <h3>Cores no marketing</h3>
-                              <p>As cores sempre foram ferramentas para ilustrar os sentimentos e situações, a pré-história mostra indícios do uso das cores para representar da forma mais detalhada possível os eventos (com as técnicas disponíveis). Atualmente, a situação não muda, seja na arte ou na forma como falamos. Quem nunca ouviu um “Ele está vermelho de raiva” ou até mesmo “Você é um amarelo”. De qualquer forma, a cor está presente em todos os aspectos e consegue influenciar as pessoas tanto diretamente como indiretamente. <br><br>
-
-                            No marketing, as cores são fundamentais para criar influências e chamar atenção dos clientes. As marcas comerciais ao criarem uma propaganda ou desenvolver um produto têm a obrigação também de levar em conta a representação das cores e seus efeitos psicológicos que fazem nos consumidores. Não é normal você ver uma marca que venda Fast-Food ter a cor preta em sua logo ou que use muito nas suas propagandas, não é? Pode até ter o preto, obviamente, mas não será a principal tonalidade, as mais usadas são o amarelo e o vermelho, já que ambas podem despertar o apetite e serem cores mais quentes e chamativas. Outros significados para as cores em geral são:<br><br>
-
-                            - Roxo é a cor da sabedoria, espiritualidade e criatividade. O roxo transmite a sensação de melancolia e intuição.<br><br>
-
-                            - A cor laranja é utilizada para transmitir alegria, amizade, cumplicidade e confiança.<br><br>
-
-                            - O marrom representa a competência, maturidade e firmeza. Pode-se dizer que bastante confortável e familiar.<br><br>
-
-                            - O verde é tido como crescimento, saúde, responsabilidade e esperança. O verde escuro é pode ser associado ao dinheiro.<br><br>
-
-                            - O amarelo é passa a sensação de calor e luz, riqueza e clareza<br><br>
-
-                            - A cor vermelha representa ação, juventude, movimento, dinamicidade e urgência<br><br>
-
-                            - A cor azul é associada à tranqüilidade, confiança, segurança e inteligência. Os azuis mais claros têm a predominância da paz de espírito ou conhecimento. Os tons escuros têm mais a ver com a segurança e firmeza na escolha.<br><br>
-
-                            - A cor branca remete a pureza, calma e sinceridade. Significa equilíbrio e paz.<br><br>
-
-                            - Já a cor preta, apesar de possuir carga negativa por está associada com a morte. Também pode transmitir força, modernidade, sofisticação e simplicidade.<br><br>
-
-                            Vale ressaltar, que apesar das cores terem um grande papel nas tomadas de decisões. Aqueles pensam em utilizar elas no marketing devem tomar precauções, como utilizar uma determinada cor para um contexto, não utilizar muitas cores no produto, propaganda, sites em geral ou sua marca (torna-se confuso o carnaval de cores).<br><br>
-
-                            É possível concluir que com o contexto certo e uma cor que se encaixe no objetivo da sua marca, podem-se maximizar os resultados do seu produto ou serviço. Os pensamentos e ideias gerados a partir de uma tonalidade são uma boa ferramenta para vendedores.<br><br>
-
-                            E aí ficou até aqui? Tem alguma dúvida ou crítica? Deixe um comentário
-                        Até a próxima, Falou!!!</p>
-                      </div>
-                </div>
-                
-
-                <!-- <div data-role="controlgroup" data-type="vertical">
-                    <a href=#pagina3 class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all" data-transition="pop"></a>
-                </div> -->
-
-                <div data-role="footer" style="background: white" data-position="fixed">
-                    <div data-role="navbar">
-                        <ul>
-                            <a href=#pagina3 class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all" data-transition="pop"></a>
-                            <a href=#pagina3 class="ui-btn ui-icon-grid ui-btn-icon-notext ui-corner-all" data-transition="pop"></a>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
+			<link rel="stylesheet" href="assets/libs-jquery-mobile/jquery.mobile-1.4.5.min.css">
+			<script src="assets/libs-jquery-mobile/demos/js/jquery.min.js"></script>
+			<script src="assets/libs-jquery-mobile/demos/js/jquery.mobile-1.4.5.min.js"></script> 
+			<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 
+		</head>
+		<body>
+			<style type="text/css">
 
-            
-            <!-- endpage 1 -->
+				.layout-search{
+					border-radius: 100px; 
+					height:60px; 
+					background: white;
+					border: none;
+				}
+				.layout-search-btn{
+					border-radius: 100px; 
+					height:60px; 
+					background: transparent;
+					border: none;
+				}
+				.layout-footer{
+					margin-top: 10px;
+					margin-bottom: 10px;
+				}
+				.ui-filter-inset {
+					margin-top: 0;
+
+				}     
+				.card-a{
+					border-radius: 10px;
+					margin: 10px !important;
+					padding: 10px !important;
+					border: 1px solid rgba(100,100,100, 0.09);
+
+				}
+				.card-a > a{
+					text-decoration: none;
+					color: black !important;
+				}
+				.img-article{
+					width: 100%;
+					min-height: 33%;
+				}
+
+			</style>
+
+			<!-- Página Inicial  -->
+
+
+			<div data-role="page" data-theme="d" id="pagina1" class="my-page" data-url="demo-page" >
+				<div data-role="panel" id="opcoes" data-theme="b" data-position="left" data-display="overlay">
+
+					<p><strong>OPÇÕES</strong></p>
+
+					<ul data-role="listview" id="listando">
+
+						<li>
+							<a href="#" data-rel="close" class="ui-btn ui-corner-all ui-shadow ui-mini ui-btn-inline ui-icon-arrow-r ui-btn-icon-right"></a>
+
+						</li>
+						<li>
+							<a href="#popupLogin1" data-rel="popup" id="login-1" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a" data-transition="pop">Login</a>
+						</li>
+						<li>
+							<a onclick="logoutPOST();" data-rel="popup" id="logout-1" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-power ui-btn-icon-left ui-btn-a" data-transition="pop">Logout</a>
+						</li>
+						<li>
+							<a href="#pagina4" id="favorite1" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-star ui-btn-icon-left ui-btn-a">Favoritos</a>
+						</li>
+						<li>
+							<a href="https://waytec.online" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-info ui-btn-icon-left ui-btn-a">Mais informações</a>
+						</li>
+					</ul>
+
+					
+
+				</div>
+				<div data-role="popup" id="popupLogin1" data-theme="a" class="ui-corner-all">
+					<form class="result" method="post" enctype="application/json" >
+						<div style="padding:10px 20px;">
+							<h3>Entre</h3>
+							<label for="un" class="ui-hidden-accessible">Username:</label>
+							<input type="text" name="user" id="email0" value="" placeholder="email" data-theme="a">
+							<label for="pw" class="ui-hidden-accessible">Password:</label>
+							<input type="password" name="pass" id="password0" value="" placeholder="password" data-theme="a">
+							<button type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check" onclick="loginPOST(document.getElementById('email0').value, document.getElementById('password0').value);">Login</button>
+						</div>
+					</form>
+				</div>
+
+
+				<div data-role="header" data-position="fixed">
+					
+					<form class="ui-filterable">
+
+						<div class="ui-grid-a" style="display: flex;justify-content: center;align-items: right; border-radius: 3px;">
+							<div class="ui-block-c">
+								<div class="ui-bar ui-bar-a layout-search" >
+									<input type="search" name="password" id="autocomplete-input" data-type="search" value="" placeholder="Pesquise">
+									<!--  <input  data-type="search" placeholder=""> -->
+								</div>
+							</div>
+							<!-- <div class="ui-block-e">
+								<div class="ui-bar ui-bar-a layout-search-btn">
+									<button class="ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all" type="submit"></button>
+								</div>
+							</div> -->
+						</div>
+
+					</form>
+
+				</div>
+
+				<div role="main" class="ui-content">
+					<!-- <a href="index3.html" rel="external" data-ajax="false"><h2>Clique aqui, pessoal</h2></a> -->
+
+					<ul data-role="listview" data-theme="a" id="autocomplete" data-inset="true" data-filter="true" data-input="#autocomplete-input">
+
+					</ul>
+
+				</div>
+
+				<div data-role="footer" style="background: white" data-position="fixed">
+					<div data-role="navbar">
+						<ul>
+							<a href=#opcoes class="ui-btn ui-icon-grid ui-btn-icon-notext ui-corner-all layout-footer" data-transition="pop"></a>
+							<a href=#back onclick="navigator.app.exitApp();" class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all layout-footer" data-transition="pop"></a>
+						</ul>
+					</div>
+				</div>
+
+				
+
+			</div>
+			<!-- endinicial -->
+
+			
+			<!-- page 1  -->
+			<div data-role="page" data-theme="d" id="pagina2" >
+				<div data-role="panel" id="opcoes2" data-theme="b" data-position="right" data-display="overlay">
+
+					<p><strong>OPÇÕES</strong></p>
+					   
+					<ul data-role="listview" >
+
+						<li>
+							<a href="#" data-rel="close" class="ui-btn ui-corner-all ui-shadow ui-mini ui-btn-inline ui-icon-arrow-l ui-btn-icon-left"></a>
+						</li>
+						<li>
+							<a href="#popupLogin2" data-rel="popup" id="login-2" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a" data-transition="pop" >Login</a>
+						</li>
+						<li>
+							<a onclick="logoutPOST();" data-rel="popup" id="logout-2" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-power ui-btn-icon-left ui-btn-a" data-transition="pop" >Logout</a>
+						</li>
+						<li>
+							<a href="#pagina4" id="favorite2" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-star ui-btn-icon-left ui-btn-a">Favoritos</a>
+						</li>
+						<li>
+							<a href="" id="info-article" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-info ui-btn-icon-left ui-btn-a">Visitar Página</a>
+						</li>
+
+					</ul>
+
+				</div>
+
+				<div data-role="popup" id="popupLogin2" data-theme="a" class="ui-corner-all">
+					<form class="result" method="post" enctype="application/json" >
+						<div style="padding:10px 20px;">
+							<h3>Entre</h3>
+							<label for="un" class="ui-hidden-accessible">Username:</label>
+							<input type="text" name="user" id="email" value="" placeholder="email" data-theme="a">
+							<label for="pw" class="ui-hidden-accessible">Password:</label>
+							<input type="password" name="pass" id="password" value="" placeholder="password" data-theme="a">
+							<button type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check" onclick="loginPOST(document.getElementById('email').value, document.getElementById('password').value);">Login</button>
+						</div>
+					</form>
+				</div>
+				
+
+				<div data-role="header" data-position="fixed">
+					<!-- <h1>WayTec - Cores no Marketing</h1> -->
+
+					<!-- criar configurações -->
+					<!-- <a href=#pagina1 class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all" data-transition="pop"></a> -->
+					<form action="index.html" method="get" >
+
+						<div class="ui-grid-a" style="display: flex;justify-content: center;align-items: right; border-radius: 3px;">
+							<div class="ui-block-c">
+								<div class="ui-bar ui-bar-a layout-search">
+									<input type="search" name="password" id="search" value="" placeholder="Pesquise">
+								</div>
+							</div>
+							<div class="ui-block-e">
+								<div class="ui-bar ui-bar-a layout-search-btn" >
+									<button class="ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all" type="submit"></button>
+
+								</div>
+							</div>
+						</div>
+
+					</form>
+					<!-- <a href="https://waytec.online/artigo/cores-no-marketing" class="ui-btn ui-icon-info ui-btn-icon-notext ui-corner-all"></a> -->
+
+				</div>
+
+				<div data-role="main" class="ui-content">
+					<div id="imagem-texto" class="ilustracao">
+						
+					</div>
+					<div id="texto-article" class="ui-body ui-body-a ui-corner-all">
+						
+						  
+					</div>
+					<div align="center">
+						<a href="" onclick="favoritar();" id="info-favorite" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-star ui-btn-icon-left ui-btn-a">Salvar</a>
+					</div>
+				</div>
+
+
+				<!-- <div data-role="controlgroup" data-type="vertical">
+					<a href=#pagina3 class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all" data-transition="pop"></a>
+				</div> -->
+
+				<div data-role="footer" style="background: white" data-position="fixed">
+					<div data-role="navbar">
+						<ul>
+							<a href=#pagina3  class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all layout-footer" data-transition="pop"></a>
+							<a href=#opcoes2 class="ui-btn ui-icon-grid ui-btn-icon-notext ui-corner-all layout-footer" data-transition="pop"></a>
+						</ul>
+					</div>
+				</div>
+
+			</div>
 
 
 
-            <!-- page 2 -->
-            <div data-role="page" id="pagina3" data-theme="d" data-dialog="true">
-                <div data-role="header">
-                    <!-- <h1>Volte para o artigo</h1> -->
-                </div>
-
-                <div data-role="main" class="ui-content">
-                    <a href="./index.html" data-shadow="false" data-iconshadow="false" data-icon="carat-l" data-iconpos="notext" data-rel="back" class="ui-btn ui-icon-back ui-btn-icon-top" data-ajax="false">Volte</a>
-                    <a href=#pagina1 class="ui-btn" data-transition="pop" data-direction="reverse">página inicial</a>
-                </div>
-
-                <div data-role="footer">
-                    <h2>@WayTec</h2>
-                </div>
-
-            </div>
-            <!-- endpage 2 -->
+			
+			<!-- endpage 1 -->
 
 
 
-            <script src="cordova.js"></script>
-            <script src="js/index.js"></script>
-        </body>
-        </html>
+			<!-- page dialog of page article individual -->
+			<div data-role="page" id="pagina3" data-theme="d" data-dialog="true" >
+				<div data-role="header">
+					<!-- <h1>Volte para o artigo</h1> -->
+				</div>
+
+				<div data-role="main" class="ui-content">
+					<a href="./index.html" data-shadow="false" data-iconshadow="false" data-icon="carat-l" data-iconpos="notext" data-rel="back" class="ui-btn ui-icon-back ui-btn-icon-top" data-ajax="false">Volte</a>
+					<a href=#pagina1 class="ui-btn" data-transition="pop" data-direction="reverse">página inicial</a>
+				</div>
+
+				<div data-role="footer">
+					<h2>@WayTec</h2>
+				</div>
+
+			</div>
+			<!-- endpage dialog of page article individual -->
+
+			<!-- page favorite -->
+			<div data-role="page" data-theme="d" id="pagina4" class="my-page" data-url="demo-page" >
+				<div data-role="panel" id="opcoes4" data-theme="b" data-position="left" data-display="overlay">
+
+					<p><strong>OPÇÕES</strong></p>
+
+					<ul data-role="listview" id="listando">
+
+						<li>
+							<a href="#" data-rel="close" class="ui-btn ui-corner-all ui-shadow ui-mini ui-btn-inline ui-icon-arrow-r ui-btn-icon-right"></a>
+
+						</li>
+						<li>
+							<a href="#popupLogin4" data-rel="popup" id="login-3" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a" data-transition="pop">Login</a>
+						</li>
+						<li>
+							<a onclick="logoutPOST();" data-rel="popup" id="logout-3" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-power ui-btn-icon-left ui-btn-a" data-transition="pop">Logout</a>
+						</li>
+						<li>
+							<a href="https://waytec.online" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-info ui-btn-icon-left ui-btn-a">Mais informações</a>
+						</li>
+					</ul>
+
+					
+
+				</div>
+				<div data-role="popup" id="popupLogin4" data-theme="a" class="ui-corner-all">
+					<form class="result" method="post" enctype="application/json" >
+						<div style="padding:10px 20px;">
+							<h3>Entre</h3>
+							<label for="un" class="ui-hidden-accessible">Username:</label>
+							<input type="text" name="user" id="email2" value="" placeholder="email" data-theme="a">
+							<label for="pw" class="ui-hidden-accessible">Password:</label>
+							<input type="password" name="pass" id="password2" value="" placeholder="password" data-theme="a">
+							<button type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check" onclick="loginPOST(document.getElementById('email2').value, document.getElementById('password2').value);">Login</button>
+						</div>
+					</form>
+				</div>
+
+
+				<div data-role="header" data-position="fixed">
+					
+					<h1 style="font-family: Roboto">Favoritos</h1>
+
+				</div>
+
+				<div role="main" class="ui-content">
+					<!-- <a href="index3.html" rel="external" data-ajax="false"><h2>Clique aqui, pessoal</h2></a> -->
+
+					<ul data-role="listview" data-theme="a" id="autofavorite" data-inset="true" data-filter="true" data-input="#autocomplete-input">
+
+					</ul>
+
+				</div>
+
+				<div data-role="footer" style="background: white" data-position="fixed">
+					<div data-role="navbar">
+						<ul>
+							<a href=#opcoes4 class="ui-btn ui-icon-grid ui-btn-icon-notext ui-corner-all layout-footer" data-transition="pop"></a>
+							<a href=#pagina3  class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all layout-footer" data-transition="pop"></a>
+						</ul>
+					</div>
+				</div>
+
+				
+
+			</div>
+
+			<!-- endpage favorite -->
+
+
+
+			<script type="text/javascript">
+			// var header = document.querySelector('header');
+			// var section = document.querySelector('section');
+			
+			// 104.131.37.227
+			var requestURL = 'https://waytec.online/api/article';
+
+			var request = new XMLHttpRequest();
+
+			request.open('GET', requestURL);
+			request.responseType = 'json';
+			// cabeçalho precisa da senha em base64
+			request.setRequestHeader('Authorization', 'Basic '+ btoa("brinfo:root1234"));
+			request.send();
+
+
+			if (localStorage.getItem('token') == null && localStorage.getItem('id') == null){
+				var token = false
+				var id = false
+				localStorage.setItem('id', id);
+				localStorage.setItem('token', token);
+
+			}
+
+
+			var test = false
+			var artigo_armazenar = null
+
+			request.onload = function() {
+					// objeto json
+
+
+				var article = request.response;
+				artigo_armazenar = request.response;
+				if (localStorage.getItem('token') != null && localStorage.getItem('id') != null){
+					listFavorite();
+				}
+	
+				var ids = []
+
+
+				var estrutura = document.getElementById("autocomplete");
+				for (var x in article){
+
+					// estrutura da listagem
+
+					var slug = article[x].slug
+					var texto = `
+					<li class="card-a">
+					<a href="#pagina2" onclick="mudar('${slug}', ${article[x].id})" id="title-article${x}">
+					<img src="${article[x].image}" width="150px" height="110px" class="ui-li-thumb">
+
+					</a>
+					</li>
+
+					`;
+					
+
+					estrutura.innerHTML += texto;
+
+
+
+				}
+
+				for (var i in article){
+
+					
+
+					// alert(article[i].title);
+					var element = document.getElementById("title-article"+i);
+
+					var H2 = document.createElement('h2');
+					var p = document.createElement('p');
+					var p2 = document.createElement('p');
+
+
+					H2.textContent = article[i].title;
+					p.textContent = article[i].resume;
+					p2.textContent = 'Veja mais';
+					p2.className = "ui-li-aside";
+
+					element.appendChild(H2);
+					element.appendChild(p);
+					element.appendChild(p2);
+
+
+				}
+
+				
+			}
+
+		
+
+
+			function loginoulogout() {
+				
+				var condicao1 = getId();
+				var condicao2 = getToken();
+
+				if (condicao1 == 'false') {
+					console.log("entrou que tem que ser null "+condicao1+" "+condicao2);
+					Mudarestado('login-1', 'block');
+				  	Mudarestado('logout-1', 'none');
+
+				  	// login ativado e logout desativado
+				  	Mudarestado('login-2', 'block');
+				  	Mudarestado('logout-2', 'none');
+
+				  	Mudarestado('login-3', 'block');
+					Mudarestado('logout-3', 'none');
+
+					Mudarestado('favorite1', 'none');
+					Mudarestado('favorite2', 'none');
+
+					Mudarestado('info-favorite', 'none');
+				} 
+				if (condicao1 != 'false'){
+					console.log("entrou em que ter valor "+condicao1+" "+condicao2);
+					(async () => { 
+					  const rawResponse = await fetch('https://waytec.online/api/verifytoken', {
+					    method: 'POST',
+					    headers: {
+					      'Accept': 'application/json',
+					      'Content-Type': 'application/json',
+					      'Authorization': 'Basic '+ btoa("brinfo:root1234")
+					    },
+					    body: JSON.stringify({pk: getId(), token: getToken()})
+					  });
+					  const content = await rawResponse.json();
+
+					  console.log(getId()+" "+getToken());
+					  console.log(content);
+					  if (content == true) {
+					  	// login desativado e logout ativado
+					  	Mudarestado('login-1', 'none');
+					  	Mudarestado('logout-1', 'block');
+
+					  	Mudarestado('login-2', 'none');
+					  	Mudarestado('logout-2', 'block');	
+					  
+					  	Mudarestado('login-3', 'none');
+					  	Mudarestado('logout-3', 'block');
+					  	
+					  	Mudarestado('favorite1', 'block');
+						Mudarestado('favorite2', 'block');
+					  
+					  	Mudarestado('info-favorite', 'block');
+					  } 
+					    
+
+					}) ();
+				}
+
+				
+
+				
+			}
+			loginoulogout();
+			
+
+			function mudar(article){
+
+				var artigo_data = request.response;
+				// console.log(artigo_data)
+				var data_one = undefined;
+
+				for (var i in artigo_data){
+					if (artigo_data[i].slug == article){
+						data_one = artigo_data[i];
+					}
+					
+				}	
+
+				// console.log(data_one)
+
+				var element = document.getElementById("texto-article");
+				var info_article = document.getElementById("info-article");
+				info_article.href = "https://waytec.online/artigo/"+data_one.slug
+
+				var image_container = document.getElementById("imagem-texto");
+
+				var imageExists = document.getElementById("imagem");
+				var h1Exists = document.getElementById("title-text-h1")
+				var spanExists = document.getElementById("paragraphs-text");
+
+				
+				localStorage.setItem("id_article", data_one.id);
+				console.log(localStorage.getItem("id_article"));
+				if (h1Exists == null && spanExists == null) {
+					var h1 = document.createElement('h1');
+					var span = document.createElement('span');
+
+					h1.textContent = data_one.title;
+					h1.id = "title-text-h1";
+					span.id = "paragraphs-text";
+					span.innerHTML = data_one.paragraphs;
+
+
+
+					element.appendChild(h1);
+					element.appendChild(span);
+
+
+					var image = document.createElement('img')
+
+					image.id = "imagem";
+					image.src = data_one.image;
+					image.className = "img-article";
+
+					image_container.appendChild(image);
+
+				}else{
+
+					h1Exists.textContent = data_one.title;
+					spanExists.innerHTML = data_one.paragraphs;
+					imageExists.src = data_one.image;
+
+				}
+
+				
+
+			}
+
+
+			
+
+			function setToken(value) {
+				 
+
+				if (value != false){
+					token = value.token;
+					
+				}else{
+					token = false;
+					
+				}
+
+				localStorage.setItem("token", token);
+			}
+
+			function getToken() {
+				return localStorage.getItem("token");
+			}
+
+			function setId(value) { 
+				if (value != false){
+					id = value.user;
+				
+				}else{
+					id = false;
+				}
+				
+				localStorage.setItem("id", id);
+			}
+
+			function getId() {
+				// js é um lixo mesmo, sempre vai ser string o tipo
+				return localStorage.getItem("id");
+			}
+
+
+			function loginPOST(email, password){ 
+
+				// Creating a XHR object 
+				(async () => { 
+				  const rawResponse = await fetch('https://waytec.online/api/login', {
+				    method: 'POST',
+				    headers: {
+				      'Accept': 'application/json',
+				      'Content-Type': 'application/json',
+				      'Authorization': 'Basic '+ btoa("brinfo:root1234")
+				    },
+				    body: JSON.stringify({email: email, password: password})
+				  });
+				  const content = await rawResponse.json();
+
+				  console.log(content.estado);
+				  
+				  if (content.estado == true){
+					  setToken(content);
+					  setId(content);
+					  loginoulogout();
+					  
+				  }
+
+				}) ();
+
+			} 
+
+			function logoutPOST() {
+				(async () => {
+					const rawResponse = await fetch('https://waytec.online/api/logout',{
+					method: 'POST',
+					headers: {
+					  'Accept': 'application/json',
+				      'Content-Type': 'application/json',
+				      'Authorization': 'Basic '+ btoa("brinfo:root1234")
+					},
+					body: JSON.stringify({pk: getId()})
+				});
+
+				const content = await rawResponse.json();
+
+				if (content.estado == true){
+					setToken(false);
+					setId(false);
+					loginoulogout();	
+				}
+				
+
+			}) ();		
+
+			}
+
+			function favoritar() {
+				(async () => { 
+				  const rawResponse = await fetch('https://waytec.online/api/favorite/', {
+				    method: 'POST',
+				    headers: {
+				      'Accept': 'application/json',
+				      'Content-Type': 'application/json',
+				      'Authorization': 'Basic '+ btoa("brinfo:root1234")
+				    },
+				    body: JSON.stringify({article: parseInt(localStorage.getItem("id_article"), 10), user: parseInt(localStorage.getItem("id"), 10)})
+				  });
+				  const content = await rawResponse.json();
+
+				  console.log(localStorage.getItem("id_article")+" "+localStorage.getItem("id"));
+				  
+				  
+
+				}) ();
+				updateFavorite();
+				
+			}
+			function updateFavorite(){
+				var estrutura = document.getElementById("autofavorite");
+				estrutura.innerHTML = '';
+				listFavorite();
+
+			}
+
+			function listFavorite() {
+				var requestURL = 'https://waytec.online/api/filter_favorite/'+localStorage.getItem("id");
+
+
+				var request = new XMLHttpRequest();
+
+				request.open('GET', requestURL);
+				request.responseType = 'json';
+				// cabeçalho precisa da senha em base64
+				request.setRequestHeader('Authorization', 'Basic '+ btoa("brinfo:root1234"));
+				request.send();
+
+
+				
+
+				
+					
+				request.onload = function() {
+
+					
+					console.log(requestURL);
+
+					var artigo_armazenar = request.response;
+
+					console.log(artigo_armazenar.articles);
+					var estrutura = document.getElementById("autofavorite");
+					for (var x in artigo_armazenar.articles){
+
+						// estrutura da listagem
+
+						var slug = artigo_armazenar.articles[x].slug
+						var texto = `
+						<li class="card-a">
+						<a href="#pagina2" onclick="mudar('${slug}', ${artigo_armazenar.articles[x].id})" id="title-article-favorite${x}">
+						<img src="${artigo_armazenar.articles[x].image}" width="150px" height="110px" class="ui-li-thumb">
+
+						</a>
+						<a onclick="removeFavorite(${artigo_armazenar.articles[x].id_favorite});"class="ui-li-aside ui-btn ui-corner-all ui-icon-delete"> </a>
+						</li>
+
+						`;
+						
+
+						estrutura.innerHTML += texto;
+
+
+
+					}
+
+					for (var i in artigo_armazenar.articles){
+
+						
+
+						// alert(article[i].title);
+						var element = document.getElementById("title-article-favorite"+i);
+
+						var H2 = document.createElement('h2');
+						var p = document.createElement('p');
+						// var p2 = document.createElement('p');
+
+
+						H2.textContent = artigo_armazenar.articles[i].title;
+						p.textContent = artigo_armazenar.articles[i].resume;
+						// p2.textContent = 'Veja mais';
+						// p2.className = "ui-li-aside";
+
+						element.appendChild(H2);
+						element.appendChild(p);
+						// element.appendChild(p2);
+
+
+					}
+
+				}
+
+				
+			}
+
+			function removeFavorite(id) {
+				(async () => { 
+				  const rawResponse = await fetch('https://waytec.online/api/favorite/'+id, {
+				    method: 'DELETE',
+				    headers: {
+				      'Accept': 'application/json',
+				      'Content-Type': 'application/json',
+				      'Authorization': 'Basic '+ btoa("brinfo:root1234")
+				    },
+				    
+				  });
+				  const content = await rawResponse.json();
+
+				  console.log(content);
+				  
+				  
+
+				}) ();
+				updateFavorite();
+			}
+	
+			function Mudarestado(el, forma) {
+				var display = document.getElementById(el).style.display;
+				console.log(forma);
+				if(forma == "none")
+					document.getElementById(el).style.display = forma;
+				else
+					document.getElementById(el).style.display = forma;
+			}
+			
+
+
+
+			// alert("Submitting: " + $('#email').val() + $('#password').val());
+				// var requestURL = 'https://waytec.online/api/article';
+
+				// var request = new XMLHttpRequest();
+
+				// request.open('POST', requestURL);
+				// request.responseType = 'json';
+				// // cabeçalho precisa da senha em base64
+				// request.setRequestHeader('Authorization', 'Basic '+ btoa("brinfo:root1234"));
+				// var requestBody = "{'email': '" + document.getElementById('email').value + "', 'password': '" + document.getElementById('password').value + "'}";
+				// request.send(requestBody);
+
+
+
+				// var email =$('#email').val();
+				// var password =  $('#password').val();
+				// $.ajax({
+				// 	type: "POST",
+				// 	crossDomain: true,
+    // 				dataType: 'jsonp',
+				// 	url: "http://127.0.0.1:8000/api/login",
+				// 	headers: {
+				//         'Authorization': 'Basic '+ btoa("brinfo:root1234"),   //If your header name has spaces or any other char not appropriate
+				//         // "Header Name Two": 'Header Value Two'  //for object property name, use quoted notation shown in second
+				//     },
+				// 	data:{"email":email,"password":password},
+
+				// 	success: function(data) {
+				// 		if (data) {
+
+				// 			alert(data);
+				// 		}
+				// 		else {
+				// 			alert('Successfully not posted.');
+				// 		}
+				// 	}
+				// });
+
+		</script>
+
+		<script src="cordova.js"></script>
+		<script src="js/index.js"></script>
+
+	</body>
+	</html>
